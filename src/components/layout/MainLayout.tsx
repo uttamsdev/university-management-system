@@ -2,33 +2,34 @@ import React from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, MenuProps } from 'antd';
 import { Outlet } from 'react-router-dom';
+import { adminRoutes, adminSidebarItems } from '../../routes/admin.routes';
 
 const { Header, Content, Footer, Sider } = Layout;
-const items: MenuProps['items'] = [
-    {
-        key: 'dashboard',
-        label: 'Dashboard'
-    },
-    {
-        key: 'profile',
-        label: 'Profile'
-    },
-    {
-        key: 'user-management',
-        label: 'User Management',
-        children: [
-            {
-                key: 'create-admin',
-                label: 'Crate Admin'
-            },
-            {
-                key: 'create-student',
-                label: 'Create Student'
-            }
-        ]
+// const items: MenuProps['items'] = [
+//     {
+//         key: 'dashboard',
+//         label: 'Dashboard'
+//     },
+//     {
+//         key: 'profile',
+//         label: 'Profile'
+//     },
+//     {
+//         key: 'user-management',
+//         label: 'User Management',
+//         children: [
+//             {
+//                 key: 'create-admin',
+//                 label: 'Crate Admin'
+//             },
+//             {
+//                 key: 'create-student',
+//                 label: 'Create Student'
+//             }
+//         ]
 
-    }
-]
+//     }
+// ]
 
 const MainLayout = () => {
 
@@ -47,7 +48,7 @@ const MainLayout = () => {
                 <div style={{ color: 'white', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <h1 style={{ textAlign: 'center', fontSize: '20px', }}>PH Uni</h1>
                 </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
             </Sider>
             <Layout>
                 <Header style={{ padding: 0 }} />
