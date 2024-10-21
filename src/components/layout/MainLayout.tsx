@@ -1,9 +1,10 @@
 import React from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, MenuProps } from 'antd';
+import { Outlet } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
-const items : MenuProps['items'] = [
+const items: MenuProps['items'] = [
     {
         key: 'dashboard',
         label: 'Dashboard'
@@ -25,14 +26,14 @@ const items : MenuProps['items'] = [
                 label: 'Create Student'
             }
         ]
-        
+
     }
 ]
 
 const MainLayout = () => {
 
     return (
-        <Layout style={{height: '100vh'}}>
+        <Layout style={{ height: '100vh' }}>
             <Sider
                 breakpoint="lg"
                 collapsedWidth="0"
@@ -43,8 +44,8 @@ const MainLayout = () => {
                     console.log(collapsed, type);
                 }}
             >
-                <div style={{color: 'white', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                    <h1 style={{textAlign: 'center', fontSize: '20px',}}>PH Uni</h1>
+                <div style={{ color: 'white', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <h1 style={{ textAlign: 'center', fontSize: '20px', }}>PH Uni</h1>
                 </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
             </Sider>
@@ -57,7 +58,7 @@ const MainLayout = () => {
                             minHeight: 360,
                         }}
                     >
-                        content
+                        <Outlet />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
