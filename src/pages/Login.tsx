@@ -23,9 +23,6 @@ const Login = () => {
     }
     const res = await login(userInfo).unwrap(); //res.data.data.accessToken petam .unwrap dile direct data ta pabo
     dispatch(setUser({user: verifyToken(res.data.accessToken), token: res.data.accessToken}))
-    
-
-
   }
 
   console.log('data', data)
